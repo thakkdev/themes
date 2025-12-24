@@ -86,12 +86,12 @@ function displayCartItems() {
     const emptyCart = document.getElementById('emptyCart');
 
     if (cart.length === 0) {
-        emptyCart.style.display = 'block';
+        if (emptyCart) emptyCart.style.display = 'block';
         updateCartSummary(0, 0, 0, 0);
         return;
     }
 
-    emptyCart.style.display = 'none';
+    if (emptyCart) emptyCart.style.display = 'none';
     
     let cartHTML = '';
     cart.forEach(item => {
