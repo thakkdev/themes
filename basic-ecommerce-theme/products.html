@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - ShopHub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>ShopHub</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="#search" class="icon">🔍</a>
+                    <a href="#account" class="icon">👤</a>
+                    <a href="cart.html" class="icon">🛒 <span class="cart-count">0</span></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>All Products</h1>
+            <p>Browse our complete collection</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar">
+                    <h3>Filters</h3>
+                    
+                    <div class="filter-group">
+                        <h4>Categories</h4>
+                        <label><input type="checkbox" name="category" value="electronics"> Electronics</label>
+                        <label><input type="checkbox" name="category" value="clothing"> Clothing</label>
+                        <label><input type="checkbox" name="category" value="home"> Home & Living</label>
+                        <label><input type="checkbox" name="category" value="books"> Books</label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Price Range</h4>
+                        <label><input type="checkbox" name="price" value="0-50"> Under $50</label>
+                        <label><input type="checkbox" name="price" value="50-100"> $50 - $100</label>
+                        <label><input type="checkbox" name="price" value="100-200"> $100 - $200</label>
+                        <label><input type="checkbox" name="price" value="200+"> $200+</label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Rating</h4>
+                        <label><input type="checkbox" name="rating" value="4"> ⭐⭐⭐⭐ & up</label>
+                        <label><input type="checkbox" name="rating" value="3"> ⭐⭐⭐ & up</label>
+                    </div>
+
+                    <button class="btn btn-secondary" onclick="clearFilters()">Clear Filters</button>
+                </aside>
+
+                <!-- Products Grid -->
+                <div class="products-main">
+                    <div class="products-toolbar">
+                        <p class="results-count">Showing 12 products</p>
+                        <div class="sort-by">
+                            <label for="sort">Sort by:</label>
+                            <select id="sort" onchange="sortProducts(this.value)">
+                                <option value="featured">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="newest">Newest</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <div class="placeholder-image">📦</div>
+                                <span class="badge">New</span>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Premium Wireless Headphones</h3>
+                                <p class="product-description">High-quality sound with noise cancellation</p>
+                                <div class="product-rating">⭐⭐⭐⭐⭐ (4.5)</div>
+                                <div class="product-footer">
+                                    <span class="product-price">$99.99</span>
+                                    <button class="btn btn-small" onclick="addToCart(1)">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <div class="placeholder-image">📦</div>
+                                <span class="badge sale">Sale</span>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Smart Watch Pro</h3>
+                                <p class="product-description">Track your fitness and stay connected</p>
+                                <div class="product-rating">⭐⭐⭐⭐ (4.0)</div>
+                                <div class="product-footer">
+                                    <span class="product-price">$199.99</span>
+                                    <button class="btn btn-small" onclick="addToCart(2)">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <div class="placeholder-image">📦</div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Leather Backpack</h3>
+                                <p class="product-description">Stylish and durable for everyday use</p>
+                                <div class="product-rating">⭐⭐⭐⭐⭐ (4.8)</div>
+                                <div class="product-footer">
+                                    <span class="product-price">$79.99</span>
+                                    <button class="btn btn-small" onclick="addToCart(3)">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <div class="placeholder-image">📦</div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Coffee Maker Deluxe</h3>
+                                <p class="product-description">Brew perfect coffee every morning</p>
+                                <div class="product-rating">⭐⭐⭐⭐ (4.2)</div>
+                                <div class="product-footer">
+                                    <span class="product-price">$129.99</span>
+                                    <button class="btn btn-small" onclick="addToCart(4)">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <div class="placeholder-image">📦</div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Wireless Keyboard</h3>
+                                <p class="product-description">Comfortable typing experience</p>
+                                <div class="product-rating">⭐⭐⭐⭐ (4.3)</div>
+                                <div class="product-footer">
+                                    <span class="product-price">$59.99</span>
+                                    <button class="btn btn-small" onclick="addToCart(5)">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <div class="placeholder-image">📦</div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Designer Sunglasses</h3>
+                                <p class="product-description">UV protection with style</p>
+                                <div class="product-rating">⭐⭐⭐⭐⭐ (4.7)</div>
+                                <div class="product-footer">
+                                    <span class="product-price">$149.99</span>
+                                    <button class="btn btn-small" onclick="addToCart(6)">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <div class="placeholder-image">📦</div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Yoga Mat Premium</h3>
+                                <p class="product-description">Non-slip, eco-friendly material</p>
+                                <div class="product-rating">⭐⭐⭐⭐ (4.1)</div>
+                                <div class="product-footer">
+                                    <span class="product-price">$39.99</span>
+                                    <button class="btn btn-small" onclick="addToCart(7)">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <div class="placeholder-image">📦</div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Portable Speaker</h3>
+                                <p class="product-description">360° sound with deep bass</p>
+                                <div class="product-rating">⭐⭐⭐⭐⭐ (4.6)</div>
+                                <div class="product-footer">
+                                    <span class="product-price">$89.99</span>
+                                    <button class="btn btn-small" onclick="addToCart(8)">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <div class="placeholder-image">📦</div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Classic Novel Collection</h3>
+                                <p class="product-description">Set of 5 timeless classics</p>
+                                <div class="product-rating">⭐⭐⭐⭐⭐ (4.9)</div>
+                                <div class="product-footer">
+                                    <span class="product-price">$49.99</span>
+                                    <button class="btn btn-small" onclick="addToCart(9)">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <div class="placeholder-image">📦</div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Stainless Steel Water Bottle</h3>
+                                <p class="product-description">Keeps drinks cold for 24 hours</p>
+                                <div class="product-rating">⭐⭐⭐⭐ (4.4)</div>
+                                <div class="product-footer">
+                                    <span class="product-price">$29.99</span>
+                                    <button class="btn btn-small" onclick="addToCart(10)">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <div class="placeholder-image">📦</div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Desk Lamp LED</h3>
+                                <p class="product-description">Adjustable brightness, USB charging</p>
+                                <div class="product-rating">⭐⭐⭐⭐ (4.0)</div>
+                                <div class="product-footer">
+                                    <span class="product-price">$44.99</span>
+                                    <button class="btn btn-small" onclick="addToCart(11)">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <div class="placeholder-image">📦</div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Running Shoes Pro</h3>
+                                <p class="product-description">Lightweight and breathable</p>
+                                <div class="product-rating">⭐⭐⭐⭐⭐ (4.5)</div>
+                                <div class="product-footer">
+                                    <span class="product-price">$119.99</span>
+                                    <button class="btn btn-small" onclick="addToCart(12)">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="btn btn-secondary" disabled>Previous</button>
+                        <span class="page-numbers">
+                            <button class="page-number active">1</button>
+                            <button class="page-number">2</button>
+                            <button class="page-number">3</button>
+                        </span>
+                        <button class="btn btn-secondary">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>ShopHub</h3>
+                    <p>Your trusted online shopping destination</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#shipping">Shipping Info</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#returns">Returns</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#support">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#facebook">Facebook</a>
+                        <a href="#twitter">Twitter</a>
+                        <a href="#instagram">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ShopHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
